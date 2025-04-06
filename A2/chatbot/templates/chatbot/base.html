@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Chatbot{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'chatbot/style.css' %}">
+</head>
+<body>
+    <div class="header">
+        <h1>My Chatbot Project</h1>
+        {% block user %}{% endblock %}
+    </div>
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+    <footer>
+        <p class="timestamp">Time: {{ now|date:"H:i:s" }}</p>
+    </footer>
+</body>
+</html>
