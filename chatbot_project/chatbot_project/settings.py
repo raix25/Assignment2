@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'chatbot',  # Your app
+    'chatterbot',  # Chatbot library
 ]
 
 MIDDLEWARE = [
@@ -123,3 +125,17 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# ChatterBot settings
+CHATTERBOT = {
+    'name': 'Echo Bot',
+    'logic_adapters': [
+        'chatterbot.logic.BestMatch',
+        {
+            'import_path': 'chatterbot.logic.BasicAdapter',
+            'response_selection_method': 'chatterbot.response_selection.get_random_response',
+        }
+    ],
+    'storage_adapter': 'chatterbot.storage.SQLStorageAdapter',
+    'database_uri': 'sqlite:///db.sqlite3',
+}

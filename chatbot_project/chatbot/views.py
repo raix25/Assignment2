@@ -14,7 +14,7 @@ chatbot = ChatBot(**settings.CHATTERBOT)
 trainer = ChatterBotCorpusTrainer(chatbot)
 trainer.train("chatterbot.corpus.english")  # Basic training data
 
-@csrf_exempt  # Disable CSRF for simplicity (enable in production)
+@csrf_exempt  # Disable CSRF for simplicity 
 def chat_api(request):
     if request.method == 'POST':
         user_input = request.POST.get('message', '').strip()
