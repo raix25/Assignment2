@@ -1,0 +1,28 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+#chat-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    height: 300px;
+    overflow-y: scroll;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+}
+.message-left {
+    text-align: left;
+    color: blue;
+}
+.message-right {
+    text-align: right;
+    color: green;
+}
+.timestamp {
+    font-size: 12px;
+    color: gray;
+    margin-top: 20px;
+}
+.header {
+    margin-bottom: 20px;
+}

@@ -1,0 +1,36 @@
+{% extends 'chatbot/base.html' %}
+
+{% block content %}
+<div id="chatbox">
+    <p><strong>ChatBot:</strong> Hello! How can I help you today?</p>
+</div>
+
+<form id="chat-form" method="post">
+    {% csrf_token %}
+    <input type="text" name="message" id="message" placeholder="Type your message..." required>
+    <button type="submit">Send</button>
+</form>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // JavaScript for handling chat functionality
+    const chatBox = document.getElementById('chat-box');
+    const userInput = document.getElementById('user-input');
+    const sendBtn = document.getElementById('send-btn');
+    const clearBtn = document.getElementById('clear-btn');
+    
+    function updateTime() {
+        const timeDisplay = document.querySelector('.time-display');
+        const now = new Date();
+        timeDisplay.textContent = now.toLocaleString();
+    }
+    
+    setInterval(updateTime, 1000);
+    updateTime();
+    
+    // Rest of your chat JavaScript...
+});
+</script>
+{% endblock %}
